@@ -128,134 +128,106 @@
     <div class="section-wrap">
       <div class="container">
         <div class="columns">
-          <main class="main-column"><div class="card card-content">
-  <h1 class="widget-title">Archive</h1>
-</div>
-<div class="archive-timeline">
+          <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      MySQL慢查询—开启慢查询
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2019-01-30T13:18:43.000Z" style="display: flex; align-items: center;">
+      <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
+      <span>2019-01-30</span>
+    </time>
+    
+    <span class="dot"></span>
+    
+    <a href="/categories/mysql/" class="post-meta-link">mysql</a>
+    
+    
+    
+    <span class="dot"></span>
+    <span>404 words</span>
+    
+  </div>
   
-  
-  
-  <div class="archive-timeline-tag"><span>2019</span></div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-07-30</div>
-        <div class="archive-timeline-post-content"><a href="/2019/07/30/vue页面结构&语法/"
-            class="archive-timeline-post-item">vue页面结构&amp;语法</a></div>
-      </div>
+  <div class="post-meta post-show-meta" style="margin-top: -10px;">
+    <div style="display: flex; align-items: center;">
+      <i class="iconfont icon-biaoqian" style="margin-right: 2px; font-size: 1.15rem;"></i>
+      
+      
+        <a href="/tags/python/" class="post-meta-link">python</a>
+      
     </div>
   </div>
   
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-07-24</div>
-        <div class="archive-timeline-post-content"><a href="/2019/07/24/vue目录/"
-            class="archive-timeline-post-item">vue目录</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-07-13</div>
-        <div class="archive-timeline-post-content"><a href="/2019/07/13/Vue国际化/"
-            class="archive-timeline-post-item">Vue国际化</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-07-01</div>
-        <div class="archive-timeline-post-content"><a href="/2019/07/01/Selenium & PhantomJS/"
-            class="archive-timeline-post-item">Selenium &amp; PhantomJS</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-06-22</div>
-        <div class="archive-timeline-post-content"><a href="/2019/06/22/Scrapy框架（2）/"
-            class="archive-timeline-post-item">Scrapy框架（2）</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-06-12</div>
-        <div class="archive-timeline-post-content"><a href="/2019/06/12/scrapy框架（1）/"
-            class="archive-timeline-post-item">scrapy框架（1）</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-05-29</div>
-        <div class="archive-timeline-post-content"><a href="/2019/05/29/Scrapy & Django项目/"
-            class="archive-timeline-post-item">Scrapy &amp; Django项目</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-05-16</div>
-        <div class="archive-timeline-post-content"><a href="/2019/05/16/Redis雪崩&穿透&击穿/"
-            class="archive-timeline-post-item">Redis雪崩&amp;穿透&amp;击穿</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-05-01</div>
-        <div class="archive-timeline-post-content"><a href="/2019/05/01/Redis数据操作/"
-            class="archive-timeline-post-item">Redis数据操作</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-04-15</div>
-        <div class="archive-timeline-post-content"><a href="/2019/04/15/Redis使用教程/"
-            class="archive-timeline-post-item">Redis使用教程</a></div>
-      </div>
-    </div>
-  </div>
-  
-</div>
+  </header>
+  <div id="section" class="post-content">
+    <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>开启慢查询日志，可以让MySQL记录下查询超过指定时间的语句，通过定位分析性能的瓶颈，才能更好的优化数据库系统的性能。</p>
+<h3 id="二、参数说明"><a href="#二、参数说明" class="headerlink" title="二、参数说明"></a>二、参数说明</h3><p>slow_query_log 慢查询开启状态<br>slow_query_log_file 慢查询日志存放的位置（这个目录需要MySQL的运行帐号的可写权限，一般设置为MySQL的数据存放目录）<br>long_query_time 查询超过多少秒才记录</p>
+<h3 id="三、设置步骤"><a href="#三、设置步骤" class="headerlink" title="三、设置步骤"></a>三、设置步骤</h3><p><strong>1.查看慢查询相关参数</strong></p>
+<pre class="highlight"><span class="line">mysql&gt; show variables like <span class="string">&#x27;slow_query%&#x27;</span>;</span><br><span class="line">+---------------------------+----------------------------------+</span><br><span class="line">| Variable_name             | Value                            |</span><br><span class="line">+---------------------------+----------------------------------+</span><br><span class="line">| slow_query_log            | OFF                              |</span><br><span class="line">| slow_query_log_file       | /mysql/data/localhost-slow.log   |</span><br><span class="line">+---------------------------+----------------------------------+</span><br><span class="line"></span><br><span class="line">mysql&gt; show variables like <span class="string">&#x27;long_query_time&#x27;</span>;</span><br><span class="line">+-----------------+-----------+</span><br><span class="line">| Variable_name   | Value     |</span><br><span class="line">+-----------------+-----------+</span><br><span class="line">| long_query_time | <span class="number">10.000000</span> |</span><br><span class="line">+-----------------+-----------+</span><br></pre>
 
+<p><strong>2.设置方法</strong></p>
+<p>方法一：全局变量设置<br>将 slow_query_log 全局变量设置为“ON”状态</p>
+<pre class="highlight"><span class="line">mysql&gt; set global slow_query_log&#x3D;&#39;ON&#39;; </span><br></pre>
+
+<p>设置慢查询日志存放的位置</p>
+<pre class="highlight"><span class="line">mysql&gt; set global slow_query_log_file&#x3D;&#39;&#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;slow.log&#39;;</span><br></pre>
+
+<p>查询超过1秒就记录</p>
+<pre class="highlight"><span class="line">mysql&gt; set global long_query_time&#x3D;1;</span><br></pre>
+
+<p>方法二：配置文件设置<br>修改配置文件my.cnf，在[mysqld]下的下方加入</p>
+<pre class="highlight"><span class="line">[mysqld]</span><br><span class="line">slow_query_log &#x3D; ON</span><br><span class="line">slow_query_log_file &#x3D; &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;slow.log</span><br><span class="line">long_query_time &#x3D; 1</span><br></pre>
+
+<p>3.重启MySQL服务</p>
+<pre class="highlight"><span class="line">service mysqld restart</span><br></pre>
+
+<p>4.查看设置后的参数</p>
+<pre class="highlight"><span class="line">mysql&gt; show variables like &#39;slow_query%&#39;;</span><br><span class="line">+---------------------+--------------------------------+</span><br><span class="line">| Variable_name       | Value                          |</span><br><span class="line">+---------------------+--------------------------------+</span><br><span class="line">| slow_query_log      | ON                             |</span><br><span class="line">| slow_query_log_file | &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;slow.log |</span><br><span class="line">+---------------------+--------------------------------+</span><br><span class="line"></span><br><span class="line">mysql&gt; show variables like &#39;long_query_time&#39;;</span><br><span class="line">+-----------------+----------+</span><br><span class="line">| Variable_name   | Value    |</span><br><span class="line">+-----------------+----------+</span><br><span class="line">| long_query_time | 1.000000 |</span><br><span class="line">+-----------------+----------+</span><br></pre>
+
+<h3 id="四、测试"><a href="#四、测试" class="headerlink" title="四、测试"></a>四、测试</h3><p>1.执行一条慢查询SQL语句</p>
+<pre class="highlight"><span class="line">mysql&gt; select sleep(2);</span><br></pre>
+
+<p>2.查看是否生成慢查询日志</p>
+<pre class="highlight"><span class="line">ls &#x2F;usr&#x2F;local&#x2F;mysql&#x2F;data&#x2F;slow.log</span><br></pre>
+
+<p>如果日志存在，MySQL开启慢查询设置成功！</p>
+
+  </div>
+  <div>
+  
+  <div class="post-note note-warning copyright" style="margin-top: 42px">
+    <p><span style="font-weight: bold;">作者：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/about">海里鱼</a></p>
+    <p><span style="font-weight: bold;">文章链接：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/01/30/MySQL%E6%85%A2%E6%9F%A5%E8%AF%A2%E2%80%94%E5%BC%80%E5%90%AF%E6%85%A2%E6%9F%A5%E8%AF%A2/">https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/01/30/MySQL%E6%85%A2%E6%9F%A5%E8%AF%A2%E2%80%94%E5%BC%80%E5%90%AF%E6%85%A2%E6%9F%A5%E8%AF%A2/</a></p>
+    <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+  </div>
+  
+  </div>
+</article>
 <div class="nav">
+  
+  <div class="nav-item-prev">
+    <a href="/2019/02/08/Mysql事务/" class="nav-link">
+      <i class="iconfont icon-left nav-prev-icon"></i>
+      <div>
+        <div class="nav-label">Prev</div>
+        
+        <div class="nav-title">Mysql事务 </div>
+        
+      </div>
+    </a>
+  </div>
   
   
   <div class="nav-item-next">
-    <a href="/archives/page/2/" class="nav-link">
+    <a href="/2019/01/19/MySQL存储引擎/" class="nav-link">
       <div>
         <div class="nav-label">Next</div>
+        
+        <div class="nav-title">MySQL存储引擎 </div>
         
       </div>
       <i class="iconfont icon-right nav-next-icon"></i>
@@ -263,7 +235,11 @@
   </div>
   
 </div>
-</main>
+
+<div class="card card-content toc-card" id="mobiletoc">
+  <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">二、参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AE%BE%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="toc-text">三、设置步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-text">四、测试</span></a></li></ol>
+</div></main>
           <aside class="left-column">
             
             <div class="card card-author">
@@ -291,6 +267,13 @@
             
             <div class="sticky-tablet">
   
+  
+  <article class="display-when-two-columns spacer">
+    <div class="card card-content toc-card">
+      <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">二、参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AE%BE%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="toc-text">三、设置步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-text">四、测试</span></a></li></ol>
+    </div>
+  </article>
   
   
   <article class="card card-content">
@@ -344,233 +327,16 @@
   </article>
   
   
-  <article class="card card-content widescreen-archive">
-    <div class="archive-card">
-  <div class="archive-card-header"><i class="iconfont icon-wodebaobiao" style="padding-right: 2px;"></i>Archive</div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a href="/archives/2019" class="archive-card-list-item">
-              2019
-              <span class="archive-card-list-item-badge">19</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-    
-      <a href="/archives/2018" class="archive-card-list-item">
-          2018
-          <span class="archive-card-list-item-badge">30</span>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
 </div>
           </aside>
           <aside class="right-column">
             <div class="sticky-widescreen">
   
+  
+  <article class="card card-content toc-card">
+    <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
+<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">二、参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AE%BE%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="toc-text">三、设置步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%B5%8B%E8%AF%95"><span class="toc-text">四、测试</span></a></li></ol>
+  </article>
   
   
   <article class="card card-content">
@@ -602,228 +368,6 @@
 </div>
   </article>
   
-  
-  <article class="card card-content">
-    <div class="archive-card">
-  <div class="archive-card-header"><i class="iconfont icon-wodebaobiao" style="padding-right: 2px;"></i>Archive</div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a href="/archives/2019" class="archive-card-list-item">
-              2019
-              <span class="archive-card-list-item-badge">19</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-    
-      <a href="/archives/2018" class="archive-card-list-item">
-          2018
-          <span class="archive-card-list-item-badge">30</span>
-      </a>
-    
-  </div>
-</div>
-  </article>
   
 </div>
           </aside>

@@ -128,134 +128,82 @@
     <div class="section-wrap">
       <div class="container">
         <div class="columns">
-          <main class="main-column"><div class="card card-content">
-  <h1 class="widget-title">Archive</h1>
-</div>
-<div class="archive-timeline">
+          <main class="main-column">
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      Redis雪崩&穿透&击穿
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2019-05-16T13:09:56.000Z" style="display: flex; align-items: center;">
+      <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
+      <span>2019-05-16</span>
+    </time>
+    
+    <span class="dot"></span>
+    
+    <a href="/categories/redis/" class="post-meta-link">redis</a>
+    
+    
+    
+    <span class="dot"></span>
+    <span>473 words</span>
+    
+  </div>
   
-  
-  
-  <div class="archive-timeline-tag"><span>2019</span></div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-07-30</div>
-        <div class="archive-timeline-post-content"><a href="/2019/07/30/vue页面结构&语法/"
-            class="archive-timeline-post-item">vue页面结构&amp;语法</a></div>
-      </div>
+  <div class="post-meta post-show-meta" style="margin-top: -10px;">
+    <div style="display: flex; align-items: center;">
+      <i class="iconfont icon-biaoqian" style="margin-right: 2px; font-size: 1.15rem;"></i>
+      
+      
+        <a href="/tags/python/" class="post-meta-link">python</a>
+      
     </div>
   </div>
   
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-07-24</div>
-        <div class="archive-timeline-post-content"><a href="/2019/07/24/vue目录/"
-            class="archive-timeline-post-item">vue目录</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-07-13</div>
-        <div class="archive-timeline-post-content"><a href="/2019/07/13/Vue国际化/"
-            class="archive-timeline-post-item">Vue国际化</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-07-01</div>
-        <div class="archive-timeline-post-content"><a href="/2019/07/01/Selenium & PhantomJS/"
-            class="archive-timeline-post-item">Selenium &amp; PhantomJS</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-06-22</div>
-        <div class="archive-timeline-post-content"><a href="/2019/06/22/Scrapy框架（2）/"
-            class="archive-timeline-post-item">Scrapy框架（2）</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-06-12</div>
-        <div class="archive-timeline-post-content"><a href="/2019/06/12/scrapy框架（1）/"
-            class="archive-timeline-post-item">scrapy框架（1）</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-05-29</div>
-        <div class="archive-timeline-post-content"><a href="/2019/05/29/Scrapy & Django项目/"
-            class="archive-timeline-post-item">Scrapy &amp; Django项目</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-05-16</div>
-        <div class="archive-timeline-post-content"><a href="/2019/05/16/Redis雪崩&穿透&击穿/"
-            class="archive-timeline-post-item">Redis雪崩&amp;穿透&amp;击穿</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-05-01</div>
-        <div class="archive-timeline-post-content"><a href="/2019/05/01/Redis数据操作/"
-            class="archive-timeline-post-item">Redis数据操作</a></div>
-      </div>
-    </div>
-  </div>
-  
-  
-  <div class="archive-timeline-item">
-    <div class="archive-timeline-post">
-      <div class="card card-content">
-        <div class="archive-timeline-post-date">2019-04-15</div>
-        <div class="archive-timeline-post-content"><a href="/2019/04/15/Redis使用教程/"
-            class="archive-timeline-post-item">Redis使用教程</a></div>
-      </div>
-    </div>
-  </div>
-  
-</div>
+  </header>
+  <div id="section" class="post-content">
+    <h2 id="1-缓存穿透"><a href="#1-缓存穿透" class="headerlink" title="1. 缓存穿透"></a>1. 缓存穿透</h2><pre class="highlight"><span class="line">1）定义</span><br><span class="line">1. 缓存穿透是指查询一个一定不存在的数据，由于缓存不命中，接着查询数据库也无法查询出结果，</span><br><span class="line">2. 虽然也不会写入到缓存中，但是这将会导致每个查询都会去请求数据库，造成缓存穿透；</span><br><span class="line">2）解决方法 ：布隆过滤</span><br><span class="line">1. 对所有可能查询的参数以hash形式存储，在控制层先进行校验，不符合则丢弃，从而避免了对底层存储系统的查询压力；</span><br></pre>
 
+<hr>
+<h2 id="2-缓存雪崩"><a href="#2-缓存雪崩" class="headerlink" title="2.缓存雪崩"></a>2.缓存雪崩</h2><pre class="highlight"><span class="line"></span><br><span class="line">1）定义　　　　　　</span><br><span class="line">1. 缓存雪崩是指，由于缓存层承载着大量请求，有效的保护了存储层，但是如果缓存层由于某些原因整体不能提供服务</span><br><span class="line">2. 于是所有的请求都会达到存储层，存储层的调用量会暴增，造成存储层也会挂掉的情况。</span><br><span class="line">2）解决方法</span><br><span class="line">1. 保证缓存层服务高可用性：比如 Redis Sentinel 和 Redis Cluster 都实现了高可用</span><br><span class="line">2. 依赖隔离组件为后端限流并降级：比如对某个key只允许一个线程查询数据和写缓存，其他线程等待。</span><br></pre>
+
+<hr>
+<h2 id="3-缓存击穿"><a href="#3-缓存击穿" class="headerlink" title="3. 缓存击穿"></a>3. 缓存击穿</h2><pre class="highlight"><span class="line">1）定义：</span><br><span class="line">1. 缓存击穿，就是说某个 key 非常热点，访问非常频繁，处于集中式高并发访问的情况</span><br><span class="line">2. 当这个 key 在失效的瞬间，大量的请求就击穿了缓存，直接请求数据库，就像是在一道屏障上凿开了一个洞。</span><br><span class="line">2）解决方法</span><br><span class="line">1. 解决方式也很简单，可以将热点数据设置为永远不过期；</span><br><span class="line">2. 或者基于 redis or zookeeper 实现互斥锁，等待第一个请求构建完缓存之后，再释放锁，进而其它请求才能通过该 key 访问数据</span><br></pre>
+
+  </div>
+  <div>
+  
+  <div class="post-note note-warning copyright" style="margin-top: 42px">
+    <p><span style="font-weight: bold;">作者：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/about">海里鱼</a></p>
+    <p><span style="font-weight: bold;">文章链接：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/05/16/Redis%E9%9B%AA%E5%B4%A9&amp;%E7%A9%BF%E9%80%8F&amp;%E5%87%BB%E7%A9%BF/">https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/05/16/Redis%E9%9B%AA%E5%B4%A9&amp;%E7%A9%BF%E9%80%8F&amp;%E5%87%BB%E7%A9%BF/</a></p>
+    <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+  </div>
+  
+  </div>
+</article>
 <div class="nav">
+  
+  <div class="nav-item-prev">
+    <a href="/2019/05/29/Scrapy &amp; Django项目/" class="nav-link">
+      <i class="iconfont icon-left nav-prev-icon"></i>
+      <div>
+        <div class="nav-label">Prev</div>
+        
+        <div class="nav-title">Scrapy &amp; Django项目 </div>
+        
+      </div>
+    </a>
+  </div>
   
   
   <div class="nav-item-next">
-    <a href="/archives/page/2/" class="nav-link">
+    <a href="/2019/05/01/Redis数据操作/" class="nav-link">
       <div>
         <div class="nav-label">Next</div>
+        
+        <div class="nav-title">Redis数据操作 </div>
         
       </div>
       <i class="iconfont icon-right nav-next-icon"></i>
@@ -263,7 +211,11 @@
   </div>
   
 </div>
-</main>
+
+<div class="card card-content toc-card" id="mobiletoc">
+  <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F"><span class="toc-text">1. 缓存穿透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9"><span class="toc-text">2.缓存雪崩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF"><span class="toc-text">3. 缓存击穿</span></a></li></ol>
+</div></main>
           <aside class="left-column">
             
             <div class="card card-author">
@@ -291,6 +243,13 @@
             
             <div class="sticky-tablet">
   
+  
+  <article class="display-when-two-columns spacer">
+    <div class="card card-content toc-card">
+      <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F"><span class="toc-text">1. 缓存穿透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9"><span class="toc-text">2.缓存雪崩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF"><span class="toc-text">3. 缓存击穿</span></a></li></ol>
+    </div>
+  </article>
   
   
   <article class="card card-content">
@@ -344,233 +303,16 @@
   </article>
   
   
-  <article class="card card-content widescreen-archive">
-    <div class="archive-card">
-  <div class="archive-card-header"><i class="iconfont icon-wodebaobiao" style="padding-right: 2px;"></i>Archive</div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a href="/archives/2019" class="archive-card-list-item">
-              2019
-              <span class="archive-card-list-item-badge">19</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-    
-      <a href="/archives/2018" class="archive-card-list-item">
-          2018
-          <span class="archive-card-list-item-badge">30</span>
-      </a>
-    
-  </div>
-</div>
-  </article>
-  
 </div>
           </aside>
           <aside class="right-column">
             <div class="sticky-widescreen">
   
+  
+  <article class="card card-content toc-card">
+    <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F"><span class="toc-text">1. 缓存穿透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9"><span class="toc-text">2.缓存雪崩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF"><span class="toc-text">3. 缓存击穿</span></a></li></ol>
+  </article>
   
   
   <article class="card card-content">
@@ -602,228 +344,6 @@
 </div>
   </article>
   
-  
-  <article class="card card-content">
-    <div class="archive-card">
-  <div class="archive-card-header"><i class="iconfont icon-wodebaobiao" style="padding-right: 2px;"></i>Archive</div>
-  <div class="archive-card-list">
-    
-    
-    
-      
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-          <a href="/archives/2019" class="archive-card-list-item">
-              2019
-              <span class="archive-card-list-item-badge">19</span>
-          </a>
-        
-        
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-      
-        
-      
-    
-    
-      <a href="/archives/2018" class="archive-card-list-item">
-          2018
-          <span class="archive-card-list-item-badge">30</span>
-      </a>
-    
-  </div>
-</div>
-  </article>
   
 </div>
           </aside>
