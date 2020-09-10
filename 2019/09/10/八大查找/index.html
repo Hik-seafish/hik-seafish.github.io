@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#fff" id="theme-color">
   <link rel="icon" href="/img/z.ico">
-  <title>Ms.Hai</title>
+  <title>勿忘初心 | 方得始终</title>
   <script>
     // control reverse button
     var reverseDarkList = {
@@ -104,7 +104,7 @@
       
       <img class="navbar-logo-img" src="/img/z.ico">
       
-      <span class="navbar-logo-dsc">Ms.Hai</span>
+      <span class="navbar-logo-dsc">勿忘初心 | 方得始终</span>
     </span>
   </div>
   <div class="navbar-menu">
@@ -132,18 +132,23 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      vue页面结构&语法
+      八大查找
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2019-07-30T12:58:39.000Z" style="display: flex; align-items: center;">
+    <time datetime="2019-09-10T00:18:22.000Z" style="display: flex; align-items: center;">
       <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
-      <span>2019-07-30</span>
+      <span>2019-09-10</span>
     </time>
+    
+    <span class="dot"></span>
+    
+    <a href="/categories/算法/" class="post-meta-link">算法</a>
+    
     
     
     <span class="dot"></span>
-    <span>0 words</span>
+    <span>947 words</span>
     
   </div>
   
@@ -159,13 +164,25 @@
   
   </header>
   <div id="section" class="post-content">
-    
+    <h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p>算法简介 顺序查找又称为线性查找，是一种最简单的查找方法。适用于线性表的顺序存储结构和链式存储结构。该算法的时间复杂度为O(n)。 基本思路 从第一个元素m开始逐个与需要查找的元素x进行比较，当比较到元素值相同(即m=x)时返回元素m的下标，如果比较到最后都没有找到，则返回-1。 优缺点 缺点：是当n 很大时，平均查找长度较大，效率低； 优点：是对表中数据元素的存储没有要求。另外，对于线性链表，只能进行顺序查找。 算法实现</p>
+<pre class="highlight"><span class="line">def sequential_search(lis, key):</span><br><span class="line">  length &#x3D; len(lis)</span><br><span class="line">  for i in range(length):</span><br><span class="line">    if lis[i] &#x3D;&#x3D; key:</span><br><span class="line">      return i</span><br><span class="line">    else:</span><br><span class="line">      return False</span><br><span class="line"></span><br></pre>
+
+<h2 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h2><p>二分查找（Binary Search），是一种在有序数组中查找某一特定元素的查找算法。查找过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则查找过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组为空，则代表找不到。 这种查找算法每一次比较都使查找范围缩小一半。</p>
+<p>算法描述 给予一个包含 个带值元素的数组A 1、 令 L为0 ， R为 n-1 2、 如果L&gt;R，则搜索以失败告终 3、 令 m (中间值元素)为 ⌊(L+R)/2⌋ 4、 如果 AmT，令 R为 m - 1 并回到步骤二 复杂度分析 时间复杂度：折半搜索每次把搜索区域减少一半，时间复杂度为 O(logn) 空间复杂度：O(1)</p>
+<pre class="highlight"><span class="line">def binary_search(lis, key):</span><br><span class="line">  low &#x3D; 0</span><br><span class="line">  high &#x3D; len(lis) - 1</span><br><span class="line">  time &#x3D; 0</span><br><span class="line">  while low &lt; high:</span><br><span class="line">    time +&#x3D; 1</span><br><span class="line">    mid &#x3D; int((low + high) &#x2F; 2)</span><br><span class="line">    if key &lt; lis[mid]:</span><br><span class="line">      high &#x3D; mid - 1</span><br><span class="line">    elif key &gt; lis[mid]:</span><br><span class="line">      low &#x3D; mid + 1</span><br><span class="line">    else:</span><br><span class="line">      # 打印折半的次数</span><br><span class="line">      print(&quot;times: %s&quot; % time)</span><br><span class="line">      return mid</span><br><span class="line">  print(&quot;times: %s&quot; % time)</span><br><span class="line">  return False</span><br></pre>
+
+<h2 id="插值查找"><a href="#插值查找" class="headerlink" title="插值查找"></a>插值查找</h2><p>算法简介</p>
+<p>插值查找是根据要查找的关键字key与查找表中最大最小记录的关键字比较后的 查找方法，其核心就在于插值的计算公式 (key-a[low])/(a[high]-a[low])*(high-low)。 时间复杂度o(logn)但对于表长较大而关键字分布比较均匀的查找表来说，效率较高。</p>
+<p>算法思想 基于二分查找算法，将查找点的选择改进为自适应选择，可以提高查找效率。当然，差值查找也属于有序查找。 注：对于表长较大，而关键字分布又比较均匀的查找表来说，插值查找算法的平均性能比折半查找要好的多。反之，数组中如果分布非常不均匀，那么插值查找未必是很合适的选择。</p>
+<p>复杂度分析 时间复杂性：如果元素均匀分布，则O（log log n）），在最坏的情况下可能需要O（n）。 空间复杂度：O（1）。</p>
+<pre class="highlight"><span class="line">def binary_search(lis, key):</span><br><span class="line">  low &#x3D; 0</span><br><span class="line">  high &#x3D; len(lis) - 1</span><br><span class="line">  time &#x3D; 0</span><br><span class="line">  while low &lt; high:</span><br><span class="line">    time +&#x3D; 1</span><br><span class="line">    # 计算mid值是插值算法的核心代码</span><br><span class="line">    mid &#x3D; low + int((high - low) * (key - lis[low])&#x2F;(lis[high] - lis[low]))</span><br><span class="line">    print(&quot;mid&#x3D;%s, low&#x3D;%s, high&#x3D;%s&quot; % (mid, low, high))</span><br><span class="line">    if key &lt; lis[mid]:</span><br><span class="line">      high &#x3D; mid - 1</span><br><span class="line">    elif key &gt; lis[mid]:</span><br><span class="line">      low &#x3D; mid + 1</span><br><span class="line">    else:</span><br><span class="line">      # 打印查找的次数</span><br><span class="line">      print(&quot;times: %s&quot; % time)</span><br><span class="line">      return mid</span><br><span class="line">  print(&quot;times: %s&quot; % time)</span><br><span class="line">  return False</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">  LIST &#x3D; [1, 5, 7, 8, 22, 54, 99, 123, 200, 222, 444]</span><br><span class="line">  result &#x3D; binary_search(LIST, 444)</span><br><span class="line">  print(result)</span><br><span class="line"></span><br></pre>
+
   </div>
   <div>
   
   <div class="post-note note-warning copyright" style="margin-top: 42px">
-    <p><span style="font-weight: bold;">作者：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/about">海里鱼</a></p>
-    <p><span style="font-weight: bold;">文章链接：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/07/30/vue%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84&amp;%E8%AF%AD%E6%B3%95%20-%20%E5%89%AF%E6%9C%AC%20-%20%E5%89%AF%E6%9C%AC%20(8)/">https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/07/30/vue%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84&amp;%E8%AF%AD%E6%B3%95%20-%20%E5%89%AF%E6%9C%AC%20-%20%E5%89%AF%E6%9C%AC%20(8)/</a></p>
+    <p><span style="font-weight: bold;">作者：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/about">Hairi</a></p>
+    <p><span style="font-weight: bold;">文章链接：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/09/10/%E5%85%AB%E5%A4%A7%E6%9F%A5%E6%89%BE/">https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/09/10/%E5%85%AB%E5%A4%A7%E6%9F%A5%E6%89%BE/</a></p>
     <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
   </div>
   
@@ -174,12 +191,12 @@
 <div class="nav">
   
   <div class="nav-item-prev">
-    <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (6)/" class="nav-link">
+    <a href="/2019/09/15/递归/" class="nav-link">
       <i class="iconfont icon-left nav-prev-icon"></i>
       <div>
         <div class="nav-label">Prev</div>
         
-        <div class="nav-title">vue页面结构&amp;语法 </div>
+        <div class="nav-title">递归 </div>
         
       </div>
     </a>
@@ -187,11 +204,11 @@
   
   
   <div class="nav-item-next">
-    <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (7)/" class="nav-link">
+    <a href="/2019/09/02/八大排序/" class="nav-link">
       <div>
         <div class="nav-label">Next</div>
         
-        <div class="nav-title">vue页面结构&amp;语法 </div>
+        <div class="nav-title">八大排序 </div>
         
       </div>
       <i class="iconfont icon-right nav-next-icon"></i>
@@ -202,7 +219,7 @@
 
 <div class="card card-content toc-card" id="mobiletoc">
   <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
-
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE"><span class="toc-text">顺序查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE"><span class="toc-text">折半查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%80%BC%E6%9F%A5%E6%89%BE"><span class="toc-text">插值查找</span></a></li></ol>
 </div></main>
           <aside class="left-column">
             
@@ -210,7 +227,7 @@
               
 <img src="/img/x.jpg" class="author-img">
 
-<p class="author-name">海里鱼</p>
+<p class="author-name">Hairi</p>
 <p class="author-description">心有山海 静而无边</p>
 <div class="author-message">
   <a class="author-posts-count" href="/archives">
@@ -218,7 +235,7 @@
     <span>Posts</span>
   </a>
   <a class="author-categories-count" href="/categories">
-    <span>4</span>
+    <span>8</span>
     <span>Categories</span>
   </a>
   <a class="author-tags-count" href="/tags">
@@ -235,7 +252,7 @@
   <article class="display-when-two-columns spacer">
     <div class="card card-content toc-card">
       <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
-
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE"><span class="toc-text">顺序查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE"><span class="toc-text">折半查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%80%BC%E6%9F%A5%E6%89%BE"><span class="toc-text">插值查找</span></a></li></ol>
     </div>
   </article>
   
@@ -273,6 +290,34 @@
         </div>
       </a>
     
+      <a href="/categories/mongoDB">
+        <div class="categories-list-item">
+          mongoDB
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/算法">
+        <div class="categories-list-item">
+          算法
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/jwt">
+        <div class="categories-list-item">
+          jwt
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/celery">
+        <div class="categories-list-item">
+          celery
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
   </div>
 </div>
   </article>
@@ -299,7 +344,7 @@
   
   <article class="card card-content toc-card">
     <div class="toc-header"><i class="iconfont icon-menu" style="padding-right: 2px;"></i>TOC</div>
-
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE"><span class="toc-text">顺序查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE"><span class="toc-text">折半查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%80%BC%E6%9F%A5%E6%89%BE"><span class="toc-text">插值查找</span></a></li></ol>
   </article>
   
   
@@ -309,23 +354,23 @@
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2019-07-30</div>
-        <a href="/2019/07/30/vue页面结构&amp;语法/"><div class="recent-posts-item-content">vue页面结构&amp;语法</div></a>
+        <div class="recent-posts-item-title">2019-09-30</div>
+        <a href="/2019/09/30/Celery在Django 项目中如何使用/"><div class="recent-posts-item-content">Celery在Django 项目中如何使用</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2019-07-30</div>
-        <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (12)/"><div class="recent-posts-item-content">vue页面结构&amp;语法</div></a>
+        <div class="recent-posts-item-title">2019-09-27</div>
+        <a href="/2019/09/27/Celery 的使用/"><div class="recent-posts-item-content">Celery 的使用</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2019-07-30</div>
-        <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (10)/"><div class="recent-posts-item-content">vue页面结构&amp;语法</div></a>
+        <div class="recent-posts-item-title">2019-09-26</div>
+        <a href="/2019/09/26/Celery 结构，组件/"><div class="recent-posts-item-content">Celery 结构，组件</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2019-07-30</div>
-        <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (11)/"><div class="recent-posts-item-content">vue页面结构&amp;语法</div></a>
+        <div class="recent-posts-item-title">2019-09-19</div>
+        <a href="/2019/09/19/压缩 -压缩实现方法、常用的压缩格式/"><div class="recent-posts-item-content">压缩 -压缩实现方法、常用的压缩格式</div></a>
       </div>
     
   </div>
@@ -350,7 +395,7 @@
           
           2020
         </span>
-        <a href="/" class="footer-link">Ms.Hai </a>
+        <a href="/" class="footer-link">勿忘初心 | 方得始终 </a>
       </div>
     </div>
 

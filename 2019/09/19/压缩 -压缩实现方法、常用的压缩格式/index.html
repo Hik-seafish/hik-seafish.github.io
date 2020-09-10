@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#fff" id="theme-color">
   <link rel="icon" href="/img/z.ico">
-  <title>Ms.Hai</title>
+  <title>勿忘初心 | 方得始终</title>
   <script>
     // control reverse button
     var reverseDarkList = {
@@ -104,7 +104,7 @@
       
       <img class="navbar-logo-img" src="/img/z.ico">
       
-      <span class="navbar-logo-dsc">Ms.Hai</span>
+      <span class="navbar-logo-dsc">勿忘初心 | 方得始终</span>
     </span>
   </div>
   <div class="navbar-menu">
@@ -132,18 +132,18 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      vue页面结构&语法
+      压缩 -压缩实现方法、常用的压缩格式
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2019-07-30T12:58:39.000Z" style="display: flex; align-items: center;">
+    <time datetime="2019-09-18T19:05:00.000Z" style="display: flex; align-items: center;">
       <i class="iconfont icon-calendar" style="margin-right: 2px;"></i>
-      <span>2019-07-30</span>
+      <span>2019-09-19</span>
     </time>
     
     
     <span class="dot"></span>
-    <span>0 words</span>
+    <span>1.5k words</span>
     
   </div>
   
@@ -159,13 +159,95 @@
   
   </header>
   <div id="section" class="post-content">
-    
+    <ul>
+<li>压缩是通过 特定的算法来减少机算机对文件的大小机制，可以减少 Bytes<br>有很多的公司 对 存储的数据，都是用压缩包的形式，很少会用到数据库，一朋友 ，新跳了一家公司 分配好项目之后，没想到，发来的 数据都是 压缩包，其中有一个包 里面有着 4000W 的用户信息 （具体啥玩意我也不知道）他的电脑 打都打不开。<br>（ 咱不是程序大佬 小白白 ）</li>
+</ul>
+<p>让我突然重视了起来 压缩，因为平时 除了用快压 解压一些小电影剩下的好像什么都没有办，所以 度妈妈 了一些相关知识想着分享一下、也放在这里希望 大佬 能够指点</p>
+<p><strong>言归正传</strong><br>我们大众化的理解就是解压 就是去除空格 其实也不完全对<br>接下来我们来说说 压缩</p>
+<ol>
+<li>文件</li>
+</ol>
+<ul>
+<li><p>（ 文件 ）压缩技术 简单的来说 就是查找文件内的重复 Bytes，然后建立一个具有相同 Bytes 的 字典 文件，并且用一个代码来 表示。</p>
+</li>
+<li><p>比如原文件里，有多处重复的 Bytes or word 如：LiEnze 我爱你，这个时候 就会生产出一个代码来表示 如：sb 当然只是举例、真实的操作要麻烦的多</p>
+</li>
+</ul>
+<ol start="2">
+<li>图片</li>
+</ol>
+<ul>
+<li>（ 图片 ）计算机处理信息 用的是 二进制表示、在一张图片内 有数不清的 相同颜色点对吧，压缩就会 在某个位置上 有多少个 蓝色点、在通过 公式用 （0， 1）来表示出来</li>
+</ul>
+<p><strong>压缩 方法分为：</strong><br>（ 有的时候想追求效率 必然质量会打点折扣 ）</p>
+<ol>
+<li>有损压缩：</li>
+</ol>
+<ul>
+<li>举个例子 在压缩 图片的时候 你图片的左上角 少了一个 像素点 你的肉眼能看出来么？对吧！</li>
+<li>所以有损压缩 非常适用于 压缩 图片 音频 视频 典型的代表格式就是 .mpeg</li>
+</ul>
+<ol start="2">
+<li>无损压缩：</li>
+</ol>
+<ul>
+<li>当我们对数据追求完美 不是特别考虑效率的时候 无损压缩就用到了、代表格式就太多了 如：.zip .rar 这些啊<br>其实压缩 最重要的 一点还是去重 也就是 重复压缩</li>
+</ul>
+<p><strong>重复压缩 也有两种：</strong></p>
+<ol>
+<li>段语句的重复</li>
+</ol>
+<ul>
+<li><p>Bytes 在重复三个以上就成为短语句</p>
+</li>
+<li><p>在压缩这种类型时候 zip 用的是 两个数字 一个是 重复位置到当前位置的 距离，另一个是重复的长度</p>
+</li>
+<li><p>比如：abcddddd 我这个当前重复的位置是第 3个（第一个位置索引是 0），重复的长度是 5，那么我就可以 d(3,5) 来表示重复的 d。</p>
+</li>
+</ul>
+<p>不要觉得一个 Bytes 有256个可能 三个字节就是有 256 ^ 3 种可能、这种压缩方法简直就是天方夜谭、</p>
+<ul>
+<li>比如：一篇小说中出现的 主人公的名字，和女主角去酒店的名字，极大程度地多次出现、这样就恰恰的符合了 重复压缩的做法，但是重复压缩只适合进行一次压缩</li>
+<li>如果对文件进行第二次重复压缩 意义不大，因为第一次压缩 已经大大的破坏了 源语句的重复倾向。</li>
+</ul>
+<ol>
+<li>单 Bytes 的重复</li>
+</ol>
+<ul>
+<li><p>一个字节有 236 中可能、这样重复的几率岂不是更大？因为他是单字节，所以范围缩小了好多的。</p>
+</li>
+<li><p>比如在 ASCII 文本文件中 常用的就是 字母 和 数字，据说 E 的使用率是最高的 。</p>
+</li>
+<li><p>图片就更好理解了 肯定 深色调 和 浅色调 使用的多嘛<br>这里顺便提一下：png图片格式是一种无损压缩，其核心算法就是 zip 算法，它和 zip 格式的文件的主要区别在于：作为一种图片格式，它在文件头处存放了图片的大小、使用的颜色数等信息。</p>
+</li>
+<li><p>上面提到的短语式压缩的结果也有这种倾向：重复倾向于出现在离当前压缩位置较近的地方，重复长度倾向于比较短（20字节以内）。</p>
+</li>
+</ul>
+<p><strong>常见的压缩格式：</strong></p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/JAR/919533?fr=aladdin">JAR</a>– Java Archive File<br>他是 Java 的一种文档格式、你也可以理解为他就是 ZIP文件 ，叫他文件包，他和 ZIP 的最大区别就是 JAR 文件的内容中包含了一个 META-INF/MANIFEST.MF 文件，这个文件是在生成 JAR 文件的时候自动创建的</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Zip/16684862?fr=aladdin">ZIP</a>–<br>zip 是 very常见的一种压缩格式了它不需要单独的一个压缩或者解压缩软件，因为Windows系统已经集成了对 ZIP 压缩格式的支持。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RAR">RAR</a>–<br>RAR 的压缩地位仅次于 ZIP ,因为 RAR 的压缩率 要比 ZIP 高很多。有一个后起之秀 叫 7Z 有着 比 RAR 更高的压缩率 但是 没办法 RAR 在压缩领域奠定了一定的基础、不可撼动。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/CAB/10159898">CAB</a><br>CAB 是微软推出的压缩文件格式，主要都是用于安装程序上，所以 CAB 文件包含的文件都是被经过处理的，代价就是咱们自己解压后可能还用不了</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/ceb9fb10868f6d8cad2ba0ee.html">ISO</a> –<br>ISO 是 一种光盘镜像格式，是吧数据保存到光盘上。你一可以理解 这就是文件提取。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Tar/13886925?fr=aladdin">TAR</a>–<br>TAR .tar 为后缀的文件，WinZIP、WinRAR、都可以打开，因为 他们两个都对 TAR 进行了关联，注意说的一点是 TAR是linux 常用的文件格式</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/119%E5%8F%B7%E5%85%83%E7%B4%A0/4817562?fromtitle=uue&fromid=9922593">UUE</a>–<br>UUE 这个比较牛逼、是压缩遇到邮件编码混合 引起 乱码 的情况下就用压缩格式，可以用WinZIP、WinRAR打开。</p>
+</li>
+</ol>
+<p>压缩的操作相比较来说 还是比较麻烦的  要慢慢钻研<del>~</del></p>
+
   </div>
   <div>
   
   <div class="post-note note-warning copyright" style="margin-top: 42px">
-    <p><span style="font-weight: bold;">作者：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/about">海里鱼</a></p>
-    <p><span style="font-weight: bold;">文章链接：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/07/30/vue%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84&amp;%E8%AF%AD%E6%B3%95%20-%20%E5%89%AF%E6%9C%AC%20-%20%E5%89%AF%E6%9C%AC%20(4)/">https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/07/30/vue%E9%A1%B5%E9%9D%A2%E7%BB%93%E6%9E%84&amp;%E8%AF%AD%E6%B3%95%20-%20%E5%89%AF%E6%9C%AC%20-%20%E5%89%AF%E6%9C%AC%20(4)/</a></p>
+    <p><span style="font-weight: bold;">作者：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/about">Hairi</a></p>
+    <p><span style="font-weight: bold;">文章链接：</span><a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/09/19/%E5%8E%8B%E7%BC%A9%20-%E5%8E%8B%E7%BC%A9%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%E3%80%81%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F/">https://github.com/Hik-seafish/hik-seafish.github.io.git/2019/09/19/%E5%8E%8B%E7%BC%A9%20-%E5%8E%8B%E7%BC%A9%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%E3%80%81%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F/</a></p>
     <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
   </div>
   
@@ -174,12 +256,12 @@
 <div class="nav">
   
   <div class="nav-item-prev">
-    <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (5)/" class="nav-link">
+    <a href="/2019/09/26/Celery 结构，组件/" class="nav-link">
       <i class="iconfont icon-left nav-prev-icon"></i>
       <div>
         <div class="nav-label">Prev</div>
         
-        <div class="nav-title">vue页面结构&amp;语法 </div>
+        <div class="nav-title">Celery 结构，组件 </div>
         
       </div>
     </a>
@@ -187,11 +269,11 @@
   
   
   <div class="nav-item-next">
-    <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (3)/" class="nav-link">
+    <a href="/2019/09/15/递归/" class="nav-link">
       <div>
         <div class="nav-label">Next</div>
         
-        <div class="nav-title">vue页面结构&amp;语法 </div>
+        <div class="nav-title">递归 </div>
         
       </div>
       <i class="iconfont icon-right nav-next-icon"></i>
@@ -210,7 +292,7 @@
               
 <img src="/img/x.jpg" class="author-img">
 
-<p class="author-name">海里鱼</p>
+<p class="author-name">Hairi</p>
 <p class="author-description">心有山海 静而无边</p>
 <div class="author-message">
   <a class="author-posts-count" href="/archives">
@@ -218,7 +300,7 @@
     <span>Posts</span>
   </a>
   <a class="author-categories-count" href="/categories">
-    <span>4</span>
+    <span>8</span>
     <span>Categories</span>
   </a>
   <a class="author-tags-count" href="/tags">
@@ -273,6 +355,34 @@
         </div>
       </a>
     
+      <a href="/categories/mongoDB">
+        <div class="categories-list-item">
+          mongoDB
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/算法">
+        <div class="categories-list-item">
+          算法
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
+      <a href="/categories/jwt">
+        <div class="categories-list-item">
+          jwt
+          <span class="categories-list-item-badge">2</span>
+        </div>
+      </a>
+    
+      <a href="/categories/celery">
+        <div class="categories-list-item">
+          celery
+          <span class="categories-list-item-badge">3</span>
+        </div>
+      </a>
+    
   </div>
 </div>
   </article>
@@ -309,23 +419,23 @@
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2019-07-30</div>
-        <a href="/2019/07/30/vue页面结构&amp;语法/"><div class="recent-posts-item-content">vue页面结构&amp;语法</div></a>
+        <div class="recent-posts-item-title">2019-09-30</div>
+        <a href="/2019/09/30/Celery在Django 项目中如何使用/"><div class="recent-posts-item-content">Celery在Django 项目中如何使用</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2019-07-30</div>
-        <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (12)/"><div class="recent-posts-item-content">vue页面结构&amp;语法</div></a>
+        <div class="recent-posts-item-title">2019-09-27</div>
+        <a href="/2019/09/27/Celery 的使用/"><div class="recent-posts-item-content">Celery 的使用</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2019-07-30</div>
-        <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (10)/"><div class="recent-posts-item-content">vue页面结构&amp;语法</div></a>
+        <div class="recent-posts-item-title">2019-09-26</div>
+        <a href="/2019/09/26/Celery 结构，组件/"><div class="recent-posts-item-content">Celery 结构，组件</div></a>
       </div>
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2019-07-30</div>
-        <a href="/2019/07/30/vue页面结构&amp;语法 - 副本 - 副本 (11)/"><div class="recent-posts-item-content">vue页面结构&amp;语法</div></a>
+        <div class="recent-posts-item-title">2019-09-19</div>
+        <a href="/2019/09/19/压缩 -压缩实现方法、常用的压缩格式/"><div class="recent-posts-item-content">压缩 -压缩实现方法、常用的压缩格式</div></a>
       </div>
     
   </div>
@@ -350,7 +460,7 @@
           
           2020
         </span>
-        <a href="/" class="footer-link">Ms.Hai </a>
+        <a href="/" class="footer-link">勿忘初心 | 方得始终 </a>
       </div>
     </div>
 
